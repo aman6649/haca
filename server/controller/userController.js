@@ -1,16 +1,17 @@
-const tmt = require("../model/userModel");
+const hackofest = require("../model/userModel");
 
 const register = async (req, res) => {
-  const { email } = req.body;
-  const teamCount = await tmt.countDocuments({});
-  const tNumber = "T" + Number(teamCount + 1);
+  const { name, phone, email, clg } = req.body;
   try {
-    const team = new tmt({
+    const team = new hackofest({
       email,
-      token: tNumber,
+      name,
+      phone,
+      clg,
     });
     const newTeam = await team.save();
-    if (newTeam) return res.status(200).json({ message: newTeam.token });
+    if (newTeam)
+      return res.status(200).json({ message: "Registered successfully !!!" });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: error.message });

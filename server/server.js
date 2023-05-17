@@ -12,8 +12,6 @@ app.use(cors());
 app.use(BodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/signup", require("./routes/userRoutes"));
-app.use("/results", require("./routes/resultsRoutes"));
-app.use("/api/slot", require("./routes/slotRoutes"));
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 
