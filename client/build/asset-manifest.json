@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9ba95009.css",
-    "main.js": "/static/js/main.cfdb28b9.js",
+    "main.js": "/static/js/main.ee78bfa9.js",
     "static/js/787.fb771931.chunk.js": "/static/js/787.fb771931.chunk.js",
     "static/media/corsitlogo.png": "/static/media/corsitlogo.51e93a961e64bed57e8f.png",
     "static/media/color-sharp.png": "/static/media/color-sharp.bea361cfef80fefc2d1e.png",
@@ -35,11 +35,11 @@
     "static/media/arrow1.svg": "/static/media/arrow1.1088f8313e5637897aff2414e5938141.svg",
     "static/media/nav-icon2.svg": "/static/media/nav-icon2.a39f0e5e47e442dafcc5c9c320f19f6f.svg",
     "main.9ba95009.css.map": "/static/css/main.9ba95009.css.map",
-    "main.cfdb28b9.js.map": "/static/js/main.cfdb28b9.js.map",
+    "main.ee78bfa9.js.map": "/static/js/main.ee78bfa9.js.map",
     "787.fb771931.chunk.js.map": "/static/js/787.fb771931.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9ba95009.css",
-    "static/js/main.cfdb28b9.js"
+    "static/js/main.ee78bfa9.js"
   ]
 }
