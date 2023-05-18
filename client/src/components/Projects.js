@@ -5,6 +5,7 @@ import cyber from "../assets/img/cyber.png";
 import blockchain from "../assets/img/blockchain.png";
 import ai from "../assets/img/ai2.png";
 import ar from "../assets/img/ar2.png";
+import open from "../assets/img/open.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -45,7 +46,7 @@ export const Projects = () => {
       title: "Open Innovation",
       description:
         "Freedom to build solutions to your own problems and truly show the rest your creative prowess.",
-      imgUrl: ai,
+      imgUrl: open,
     },
   ];
 
@@ -63,11 +64,10 @@ export const Projects = () => {
                 >
                   <h2>Domains</h2>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    "Explore a myriad of cutting-edge domains and choose your
+                    passion at our hackathon, ranging from artificial
+                    intelligence and blockchain to cybersecurity and sustainable
+                    technology."
                   </p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     {/* <Nav
