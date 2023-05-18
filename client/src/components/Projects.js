@@ -62,7 +62,7 @@ export const Projects = () => {
                     isVisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
-                  <h2>Domains</h2>
+                  <h2>Domains </h2>
                   <p>
                     "Explore a myriad of cutting-edge domains and choose your
                     passion at our hackathon, ranging from artificial
