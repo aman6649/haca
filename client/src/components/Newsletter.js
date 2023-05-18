@@ -27,7 +27,8 @@ export const Newsletter = ({ status, message, onValidated }) => {
         <Row>
           <Col lg={12} md={6} xl={5}>
             <h3>
-              Subscribe to our Newsletter<br></br> & Never miss latest updates
+              For more detailed information about the HackFest, please refer to
+              the attached PDF document.
             </h3>
             {status === "sending" && <Alert>Sending...</Alert>}
             {status === "error" && <Alert variant="danger">{message}</Alert>}
