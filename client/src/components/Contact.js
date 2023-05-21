@@ -66,7 +66,7 @@ export const Contact = () => {
     <section className="contact" id="connect">
       <Container>
         <Row className="align-items-center">
-          <Col size={12} md={6}>
+          <Col>
             <img src={"../qr.jpg"} alt="QR" />
           </Col>
           <Col size={12} md={6}>
@@ -116,7 +116,7 @@ export const Contact = () => {
                         <input
                           type="text"
                           value={formDetails.TsacId}
-                          placeholder="Transaction ID"
+                          placeholder="Add Transaction ID of ₹200"
                           required
                           onChange={(e) =>
                             onFormUpdate("TsacId", e.target.value)
@@ -125,11 +125,16 @@ export const Contact = () => {
                         <div class="file d-flex align-items-center justify-content-center flex-nowrap">
                           <div>
                             {" "}
+                            <label htmlFor="fileUpload">
+                              Submit Abstract Here:
+                            </label>
                             <input
                               type="file"
+                              id="fileUpload"
                               onChange={(event) => {
                                 setfileUpload(event.target.files[0]);
                               }}
+                              required
                             />
                           </div>
                           <button
@@ -159,6 +164,12 @@ export const Contact = () => {
                             className={
                               status.success === false ? "danger" : "success"
                             }
+                            style={{
+                              marginTop: "20px",
+                              fontWeight: "bolder",
+                              backgroundColor: "#ede4e8",
+                              paddingLeft: "30px",
+                            }}
                           >
                             {status.message}
                           </p>
