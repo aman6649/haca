@@ -136,8 +136,8 @@ export const Contact = () => {
                             style={{
                               top: "-17px",
                               fontSize: "15px",
-                              paddingTop: "5px",
-                              paddingBottom: "5px",
+                              paddingTop: "8px",
+                              paddingBottom: "8px",
                               paddingLeft: "40px",
                               paddingRight: "-10px",
                               marginLeft: "10px",
