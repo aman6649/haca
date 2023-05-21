@@ -17,6 +17,11 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  TsacId: {
+    type: String,
+    required: true,
+    unique: true,
+  },
 });
 
 module.exports = mongoose.model("hackofest", userSchema);
