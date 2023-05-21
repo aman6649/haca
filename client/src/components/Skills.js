@@ -49,7 +49,7 @@ export const Skills = () => {
               >
                 <div className="item">
                   <img src={meter1} alt="Image" />
-                  <h5>₹ 20,000</h5>
+                  <h5>₹ 15,000</h5>
                 </div>
                 <div className="item">
                   <img src={meter2} alt="Image" />
@@ -57,7 +57,7 @@ export const Skills = () => {
                 </div>
                 <div className="item">
                   <img src={meter3} alt="Image" />
-                  <h5>₹ 8000</h5>
+                  <h5>₹ 7000</h5>
                 </div>
                 <div className="item">
                   <img src={meter5} alt="Image" />

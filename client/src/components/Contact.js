@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+// import { storage } from "./firebase";
+// import { ref, uploadBytes } from "./firebase/storage";
 import contactImg from "../assets/img/contact-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import axios from "axios";
+import { v4 } from "uuid";
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -11,10 +14,12 @@ export const Contact = () => {
     email: "",
     phone: "",
     clg: "",
+    TsacId: "",
   };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState("Send");
   const [status, setStatus] = useState({});
+  const [fileUpload, setfileUpload] = useState(null);
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
@@ -22,6 +27,14 @@ export const Contact = () => {
       [category]: value,
     });
   };
+  // const UploadClick = (e) => {
+  //   e.preventDefault();
+  //   if (fileUpload == null) return;
+  //   const fileref = ref(storage, `file/${fileUpload.name + v4()}`);
+  //   uploadBytes(fileref, fileUpload).then(() => {
+  //     alert("uploaded");
+  //   });
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +44,9 @@ export const Contact = () => {
       email: formDetails.email,
       phone: formDetails.phone,
       clg: formDetails.clg,
+      TsacId: formDetails.TsacId,
     };
+
     axios
       .post("/signup", dataO)
       .then((res) => {
@@ -52,17 +67,7 @@ export const Contact = () => {
       <Container>
         <Row className="align-items-center">
           <Col size={12} md={6}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <img
-                  className={
-                    isVisible ? "animate__animated animate__zoomIn" : ""
-                  }
-                  src={contactImg}
-                  alt="Contact Us"
-                />
-              )}
-            </TrackVisibility>
+            <img src={"../qr.jpg"} alt="QR" />
           </Col>
           <Col size={12} md={6}>
             <TrackVisibility>
@@ -79,6 +84,7 @@ export const Contact = () => {
                         <input
                           type="text"
                           value={formDetails.name}
+                          required
                           placeholder="Team Leader Name"
                           onChange={(e) => onFormUpdate("name", e.target.value)}
                         />
@@ -86,6 +92,7 @@ export const Contact = () => {
                           type="email"
                           value={formDetails.email}
                           placeholder="Email Address"
+                          required
                           onChange={(e) =>
                             onFormUpdate("email", e.target.value)
                           }
@@ -94,6 +101,7 @@ export const Contact = () => {
                           type="tel"
                           value={formDetails.phone}
                           placeholder="Phone No."
+                          required
                           onChange={(e) =>
                             onFormUpdate("phone", e.target.value)
                           }
@@ -102,8 +110,45 @@ export const Contact = () => {
                           type="text"
                           value={formDetails.clg}
                           placeholder="College Name"
+                          required
                           onChange={(e) => onFormUpdate("clg", e.target.value)}
                         />
+                        <input
+                          type="text"
+                          value={formDetails.TsacId}
+                          placeholder="Transaction ID"
+                          required
+                          onChange={(e) =>
+                            onFormUpdate("TsacId", e.target.value)
+                          }
+                        />
+                        <div class="file d-flex align-items-center justify-content-center flex-nowrap">
+                          <div>
+                            {" "}
+                            <input
+                              type="file"
+                              onChange={(event) => {
+                                setfileUpload(event.target.files[0]);
+                              }}
+                            />
+                          </div>
+                          <button
+                            style={{
+                              top: "-17px",
+                              fontSize: "15px",
+                              paddingTop: "5px",
+                              paddingBottom: "5px",
+                              paddingLeft: "40px",
+                              paddingRight: "-10px",
+                              marginLeft: "10px",
+                            }}
+                            // onClick={UploadClick}
+                          >
+                            {" "}
+                            <span>Upload</span>
+                          </button>
+                        </div>
+
                         <button type="submit">
                           <span>{buttonText}</span>
                         </button>
