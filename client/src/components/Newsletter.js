@@ -4,7 +4,7 @@ import { Col, Row, Alert } from "react-bootstrap";
 export const Newsletter = ({ status, message, onValidated }) => {
   const handleDownload = () => {
     const pdfUrl =
-      "https://drive.google.com/file/d/1ZSdwSmv3W6yvGYxtK6EXJmyaIOPvdfM1/view?usp=share_link";
+      "https://drive.google.com/file/d/1MNPdaX4WbkU-05e3rmS3jWgvl0MI69E9/view?usp=sharing";
     window.open(pdfUrl, "_blank");
   };
 

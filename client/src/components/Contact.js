@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-// import { storage } from "./firebase";
-// import { ref, uploadBytes } from "./firebase/storage";
-import contactImg from "../assets/img/contact-img.svg";
+import { storage } from "./firebase";
+import { ref, uploadBytes } from "firebase/storage";
+// import contactImg from "../assets/img/contact-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import axios from "axios";
@@ -27,14 +27,14 @@ export const Contact = () => {
       [category]: value,
     });
   };
-  // const UploadClick = (e) => {
-  //   e.preventDefault();
-  //   if (fileUpload == null) return;
-  //   const fileref = ref(storage, `file/${fileUpload.name + v4()}`);
-  //   uploadBytes(fileref, fileUpload).then(() => {
-  //     alert("uploaded");
-  //   });
-  // };
+  const UploadClick = (e) => {
+    e.preventDefault();
+    if (fileUpload == null) return;
+    const fileref = ref(storage, `file/${fileUpload.name + v4()}`);
+    uploadBytes(fileref, fileUpload).then(() => {
+      alert("Abstract Submitted Successfully");
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -139,7 +139,7 @@ export const Contact = () => {
                           </div>
                           <button
                             style={{
-                              top: "-17px",
+                              top: "-12px",
                               fontSize: "15px",
                               paddingTop: "8px",
                               paddingBottom: "8px",
@@ -147,9 +147,8 @@ export const Contact = () => {
                               paddingRight: "-10px",
                               marginLeft: "10px",
                             }}
-                            // onClick={UploadClick}
+                            onClick={UploadClick}
                           >
-                            {" "}
                             <span>Upload</span>
                           </button>
                         </div>
