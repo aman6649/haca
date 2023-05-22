@@ -65,7 +65,7 @@ export const Banner = () => {
                     isVisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
-                  <span className="tagline">Welcome to Hackathon</span>
+                  <span className="tagline">Welcome to Virtual Hackathon</span>
                   <h1>
                     {`Presenting`}{" "}
                     <span
@@ -77,7 +77,7 @@ export const Banner = () => {
                     </span>
                   </h1>
                   <p>
-                    HackFest is a 12-hour hackathon that is conducted by CORSIT
+                    HackFest is a 12-hour virtual hackathon that is conducted by CORSIT
                     every year since 2017. This event is an opportunity for
                     students to collaborate with like-minded individuals to
                     create innovative solutions to real-world problems.

@@ -67,7 +67,7 @@ export const Contact = () => {
       <Container>
         <Row className="align-items-center">
           <Col>
-            <img src={"../qr.jpg"} alt="QR" />
+            <img src={"../qr.jpeg"} alt="QR" />
           </Col>
           <Col size={12} md={6}>
             <TrackVisibility>
