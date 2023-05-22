@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.008f281f.css",
-    "main.js": "/static/js/main.fafe93b5.js",
+    "main.js": "/static/js/main.ea84457d.js",
     "static/js/787.fb771931.chunk.js": "/static/js/787.fb771931.chunk.js",
     "static/media/corsitlogo1.png": "/static/media/corsitlogo1.77eba6580c10dcc13237.png",
     "static/media/color-sharp.png": "/static/media/color-sharp.bea361cfef80fefc2d1e.png",
@@ -9,12 +9,12 @@
     "static/media/ar2.png": "/static/media/ar2.b7e24fbbea30913cc695.png",
     "static/media/blockchain.png": "/static/media/blockchain.2175b65809b62aaabc16.png",
     "static/media/iot.png": "/static/media/iot.2e49953945b09e7a3a07.png",
+    "static/media/energy2.png": "/static/media/energy2.22ea55654c69f7655315.png",
     "static/media/ai2.png": "/static/media/ai2.49edd1149afe41717332.png",
     "static/media/electric.png": "/static/media/electric.0fd4961695e8da5e0183.png",
     "static/media/social.png": "/static/media/social.f37ea7c288c8d44e8a38.png",
     "static/media/open.png": "/static/media/open.504d8c21a8d101d3a6e7.png",
     "static/media/data.png": "/static/media/data.3802694c9add2e87c2ab.png",
-    "static/media/energy2.png": "/static/media/energy2.a11967b5569b44a5703c.png",
     "static/media/cyber.png": "/static/media/cyber.689e13f7350afe05a58c.png",
     "static/media/banner-bg.png": "/static/media/banner-bg.cc1273af450504afe755.png",
     "static/media/header-img.svg": "/static/media/header-img.400baa4260daac98f2b2b1ccf08761c2.svg",
@@ -38,11 +38,11 @@
     "static/media/arrow1.svg": "/static/media/arrow1.1088f8313e5637897aff2414e5938141.svg",
     "static/media/nav-icon2.svg": "/static/media/nav-icon2.a39f0e5e47e442dafcc5c9c320f19f6f.svg",
     "main.008f281f.css.map": "/static/css/main.008f281f.css.map",
-    "main.fafe93b5.js.map": "/static/js/main.fafe93b5.js.map",
+    "main.ea84457d.js.map": "/static/js/main.ea84457d.js.map",
     "787.fb771931.chunk.js.map": "/static/js/787.fb771931.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.008f281f.css",
-    "static/js/main.fafe93b5.js"
+    "static/js/main.ea84457d.js"
   ]
 }
