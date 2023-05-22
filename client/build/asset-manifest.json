@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.008f281f.css",
-    "main.js": "/static/js/main.6179d966.js",
+    "main.js": "/static/js/main.677658b2.js",
     "static/js/787.fb771931.chunk.js": "/static/js/787.fb771931.chunk.js",
     "static/media/corsitlogo1.png": "/static/media/corsitlogo1.77eba6580c10dcc13237.png",
     "static/media/color-sharp.png": "/static/media/color-sharp.bea361cfef80fefc2d1e.png",
@@ -20,7 +20,6 @@
     "static/media/third.png": "/static/media/third.9e34cd1556c1d2219ff9.png",
     "static/media/second.png": "/static/media/second.8dbba66b1a04a2bbf5c1.png",
     "static/media/footer-bg.png": "/static/media/footer-bg.7bd67c0f73571d0acc02.png",
-    "static/media/contact-img.svg": "/static/media/contact-img.62aa99e0f3b968b5d1ce9eb047f34fc7.svg",
     "static/media/track.png": "/static/media/track.a7e535a47efa9d9964fb.png",
     "static/media/first.png": "/static/media/first.1346eef4bfe280ee1457.png",
     "static/media/goodie.png": "/static/media/goodie.a6875ce9569ef0390cd3.png",
@@ -35,11 +34,11 @@
     "static/media/arrow1.svg": "/static/media/arrow1.1088f8313e5637897aff2414e5938141.svg",
     "static/media/nav-icon2.svg": "/static/media/nav-icon2.a39f0e5e47e442dafcc5c9c320f19f6f.svg",
     "main.008f281f.css.map": "/static/css/main.008f281f.css.map",
-    "main.6179d966.js.map": "/static/js/main.6179d966.js.map",
+    "main.677658b2.js.map": "/static/js/main.677658b2.js.map",
     "787.fb771931.chunk.js.map": "/static/js/787.fb771931.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.008f281f.css",
-    "static/js/main.6179d966.js"
+    "static/js/main.677658b2.js"
   ]
 }
