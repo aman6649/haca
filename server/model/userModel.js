@@ -19,7 +19,7 @@ const userSchema = mongoose.Schema({
   },
   TsacId: {
     type: String,
-    required: true,
+    // required: true,
     unique: true,
   },
 });
