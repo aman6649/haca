@@ -13,7 +13,7 @@ export const Banner = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["HackFest"];
+  const toRotate = ["HackFest'23"];
   const period = 2000;
 
   useEffect(() => {
@@ -71,16 +71,17 @@ export const Banner = () => {
                     <span
                       className="txt-rotate"
                       dataperiod="1000"
-                      data-rotate='[ "HackFest" ]'
+                      data-rotate='[ "HackFest23" ]'
                     >
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
                   <p>
-                    HackFest is a 12-hour virtual hackathon that is conducted by CORSIT
-                    every year since 2017. This event is an opportunity for
-                    students to collaborate with like-minded individuals to
-                    create innovative solutions to real-world problems.
+                    HackFest&apos;23 is a 12-hour virtual hackathon that is
+                    conducted by CORSIT every year since 2017. This event is an
+                    opportunity for students to collaborate with like-minded
+                    individuals to create innovative solutions to real-world
+                    problems.
                   </p>
                   {/* <a href="#contact"> */}
                   <button onClick={() => window.location.replace("/#connect")}>

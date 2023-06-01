@@ -1,8 +1,8 @@
 import meter1 from "../assets/img/first.png";
 import meter2 from "../assets/img/second.png";
 import meter3 from "../assets/img/third.png";
-import meter5 from "../assets/img/track.png";
-import meter4 from "../assets/img/goodie.png";
+import meter5 from "../assets/img/four.png";
+import meter4 from "../assets/img/number-5.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import arrow1 from "../assets/img/arrow1.svg";
@@ -38,9 +38,8 @@ export const Skills = () => {
             <div className="skill-bx wow zoomIn">
               <h2>Prizes</h2>
               <p>
-                Get ready to win big with exciting cash prizes and amazing
-                goodies up for grabs! Don't miss out on this opportunity to win
-                and be rewarded!
+                Get ready to win big with exciting cash prizes! Don't miss out
+                on this opportunity to win and be rewarded!
               </p>
               <Carousel
                 responsive={responsive}
@@ -61,11 +60,11 @@ export const Skills = () => {
                 </div>
                 <div className="item">
                   <img src={meter5} alt="Image" />
-                  <h5>Track Prizes</h5>
+                  <h5>₹ 5000</h5>
                 </div>
                 <div className="item">
                   <img src={meter4} alt="Image" />
-                  <h5>Other Prizes</h5>
+                  <h5>₹ 3000</h5>
                 </div>
               </Carousel>
             </div>

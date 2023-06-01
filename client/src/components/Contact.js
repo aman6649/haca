@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { storage } from "./firebase";
 import { ref, uploadBytes } from "firebase/storage";
-// import contactImg from "../assets/img/contact-img.svg";
+import contactImg from "../assets/img/contact-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import axios from "axios";
@@ -67,7 +67,8 @@ export const Contact = () => {
       <Container>
         <Row className="align-items-center">
           <Col>
-            <img src={"../qr.jpeg"} alt="QR" />
+            {/* <img src={"../qr.jpeg"} alt="QR" /> */}
+            <img src={contactImg} alt="img" />
           </Col>
           <Col size={12} md={6}>
             <TrackVisibility>
@@ -113,7 +114,7 @@ export const Contact = () => {
                           required
                           onChange={(e) => onFormUpdate("clg", e.target.value)}
                         />
-                        <input
+                        {/* <input
                           type="text"
                           value={formDetails.TsacId}
                           placeholder="Add Transaction ID of ₹200"
@@ -121,7 +122,7 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("TsacId", e.target.value)
                           }
-                        />
+                        /> */}
                         <div class="file d-flex align-items-center justify-content-center flex-nowrap">
                           <div>
                             {" "}
