@@ -13,7 +13,7 @@ export const Banner = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["HackFest'23"];
+  const toRotate = ["HACKFEST'23"];
   const period = 2000;
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export const Banner = () => {
                     </span>
                   </h1>
                   <p>
-                    HackFest&apos;23 is a 12-hour virtual hackathon that is
+                    HACKFEST&apos;23 is a 12-hour virtual hackathon that is
                     conducted by CORSIT every year since 2017. This event is an
                     opportunity for students to collaborate with like-minded
                     individuals to create innovative solutions to real-world
