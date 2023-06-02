@@ -66,7 +66,7 @@ export const Banner = () => {
                   }
                 >
                   <span className="tagline">Welcome to Virtual Hackathon</span>
-                  <h1>
+                  <h2>
                     {`Presenting`}{" "}
                     <span
                       className="txt-rotate"
@@ -75,7 +75,7 @@ export const Banner = () => {
                     >
                       <span className="wrap">{text}</span>
                     </span>
-                  </h1>
+                  </h2>
                   <p>
                     HACKFEST&apos;23 is a 12-hour virtual hackathon that is
                     conducted by CORSIT every year since 2017. This event is an
@@ -83,7 +83,19 @@ export const Banner = () => {
                     individuals to create innovative solutions to real-world
                     problems.
                   </p>
-                  {/* <a href="#contact"> */}
+                  <p style={{ color: "white" }}>
+                    Event Date:
+                    <b>
+                      {" "}
+                      18<sup>th</sup> June 2023
+                    </b>
+                  </p>
+                  <p style={{ color: "white" }}>
+                    Last Date of Abstract Submission:{" "}
+                    <b>
+                      13<sup>th</sup> June 2023
+                    </b>
+                  </p>
                   <button onClick={() => window.location.replace("/#connect")}>
                     Register Here! <ArrowRightCircle size={25} />
                   </button>

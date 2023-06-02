@@ -4,7 +4,12 @@ import { Col, Row, Alert } from "react-bootstrap";
 export const Newsletter = ({ status, message, onValidated }) => {
   const handleDownload = () => {
     const pdfUrl =
-      "https://drive.google.com/file/d/1MNPdaX4WbkU-05e3rmS3jWgvl0MI69E9/view?usp=sharing";
+      "https://drive.google.com/file/d/1kfUKJqb_KCaAkXkyh7f5Q3YbAF9DQgir/view";
+    window.open(pdfUrl, "_blank");
+  };
+  const handleDownload1 = () => {
+    const pdfUrl =
+      "https://drive.google.com/file/d/1n0Ce0fL7pB8aJ0zPbVCpWiNExhdhsim4/view";
     window.open(pdfUrl, "_blank");
   };
 
@@ -22,29 +27,48 @@ export const Newsletter = ({ status, message, onValidated }) => {
     };
   }, []);
 
-  const buttonStyle = isLaptopView ? { marginLeft: "100px" } : {};
+  const buttonStyle = isLaptopView
+    ? { marginLeft: "8px", whiteSpace: "nowrap" }
+    : { whiteSpace: "nowrap" };
 
   return (
     <Col lg={12}>
       <div className="newsletter-bx wow slideInUp">
         <Row>
-          <Col lg={12} md={6} xl={5}>
-            <h3>
-              For more detailed information about the HackFest, please refer to
-              the attached PDF document.
-            </h3>
+          <Col lg={12} md={6} xl={5} style={{ alignContent: "center" }}>
+            <h5 style={{ whiteSpace: "nowrap" }}>Refer Attached PDF</h5>{" "}
           </Col>
-          <Col md={6} xl={7}>
+          <Col lg={12} md={6} xl={5}>
             <div className="new-email-bx">
               <button
                 type="button"
                 onClick={handleDownload}
                 style={buttonStyle}
               >
-                Download
+                Abstract Format
+              </button>
+            </div>
+            <div className="new-email-bx">
+              <button
+                type="button"
+                onClick={handleDownload1}
+                style={buttonStyle}
+              >
+                Rule Book
               </button>
             </div>
           </Col>
+          {/* <Col md={6} xl={7}>
+            <div className="new-email-bx">
+              <button
+                type="button"
+                onClick={handleDownload1}
+                style={buttonStyle}
+              >
+                Rule Book
+              </button>
+            </div>
+          </Col> */}
         </Row>
       </div>
     </Col>
