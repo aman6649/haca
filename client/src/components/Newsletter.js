@@ -4,12 +4,12 @@ import { Col, Row, Alert } from "react-bootstrap";
 export const Newsletter = ({ status, message, onValidated }) => {
   const handleDownload = () => {
     const pdfUrl =
-      "https://drive.google.com/file/d/1oNThcRIS8uUp0C5tKrIgFEj-hATrmtYV/view?usp=sharing";
+      "https://drive.google.com/file/d/1oNThcRIS8uUp0C5tKrIgFEj-hATrmtYV/view";
     window.open(pdfUrl, "_blank");
   };
   const handleDownload1 = () => {
     const pdfUrl =
-      "https://drive.google.com/file/d/1jfsYJ-hEdA1DBiKLo8xG3IGfgnL05KgG/view?usp=sharing";
+      "https://drive.google.com/file/d/1jfsYJ-hEdA1DBiKLo8xG3IGfgnL05KgG/view";
     window.open(pdfUrl, "_blank");
   };
 
