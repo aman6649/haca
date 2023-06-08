@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-// import { storage } from "./firebase";
-// import { ref, uploadBytes } from "./firebase/storage";
+import { storage } from "./firebase";
+import { ref, uploadBytes } from "firebase/storage";
 import contactImg from "../assets/img/contact-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -27,14 +27,14 @@ export const Contact = () => {
       [category]: value,
     });
   };
-  // const UploadClick = (e) => {
-  //   e.preventDefault();
-  //   if (fileUpload == null) return;
-  //   const fileref = ref(storage, `file/${fileUpload.name + v4()}`);
-  //   uploadBytes(fileref, fileUpload).then(() => {
-  //     alert("uploaded");
-  //   });
-  // };
+  const UploadClick = (e) => {
+    e.preventDefault();
+    if (fileUpload == null) return;
+    const fileref = ref(storage, `file/${fileUpload.name + v4()}`);
+    uploadBytes(fileref, fileUpload).then(() => {
+      alert("Abstract Submitted Successfully");
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -66,8 +66,9 @@ export const Contact = () => {
     <section className="contact" id="connect">
       <Container>
         <Row className="align-items-center">
-          <Col size={12} md={6}>
-            <img src={"../qr.jpg"} alt="QR" />
+          <Col>
+            {/* <img src={"../qr.jpeg"} alt="QR" /> */}
+            <img src={contactImg} alt="img" />
           </Col>
           <Col size={12} md={6}>
             <TrackVisibility>
@@ -113,38 +114,42 @@ export const Contact = () => {
                           required
                           onChange={(e) => onFormUpdate("clg", e.target.value)}
                         />
-                        <input
+                        {/* <input
                           type="text"
                           value={formDetails.TsacId}
-                          placeholder="Transaction ID"
+                          placeholder="Add Transaction ID of ₹200"
                           required
                           onChange={(e) =>
                             onFormUpdate("TsacId", e.target.value)
                           }
-                        />
+                        /> */}
                         <div class="file d-flex align-items-center justify-content-center flex-nowrap">
                           <div>
                             {" "}
+                            <label htmlFor="fileUpload">
+                              Submit Abstract Here:
+                            </label>
                             <input
                               type="file"
+                              id="fileUpload"
                               onChange={(event) => {
                                 setfileUpload(event.target.files[0]);
                               }}
+                              required
                             />
                           </div>
                           <button
                             style={{
-                              top: "-17px",
+                              top: "-12px",
                               fontSize: "15px",
-                              paddingTop: "5px",
-                              paddingBottom: "5px",
+                              paddingTop: "8px",
+                              paddingBottom: "8px",
                               paddingLeft: "40px",
                               paddingRight: "-10px",
                               marginLeft: "10px",
                             }}
-                            // onClick={UploadClick}
+                            onClick={UploadClick}
                           >
-                            {" "}
                             <span>Upload</span>
                           </button>
                         </div>
@@ -159,6 +164,12 @@ export const Contact = () => {
                             className={
                               status.success === false ? "danger" : "success"
                             }
+                            style={{
+                              marginTop: "20px",
+                              fontWeight: "bolder",
+                              backgroundColor: "#ede4e8",
+                              paddingLeft: "30px",
+                            }}
                           >
                             {status.message}
                           </p>

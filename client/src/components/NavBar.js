@@ -1,15 +1,21 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from "../assets/img/corsitlogo.png";
+import logo from "../assets/img/corsitlogo1.png";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
+import navIcon4 from "../assets/img/nav-icon4.svg";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router } from "react-router-dom";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const handleDownload = () => {
+    const pdfUrl =
+      "https://drive.google.com/file/d/1avP75STLCEgrenUVHuBv511RP20QXv2E/view?usp=sharing";
+    window.open(pdfUrl, "_blank");
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -82,12 +88,15 @@ export const NavBar = () => {
                 <a href="https://www.instagram.com/corsit.sit/">
                   <img src={navIcon3} alt="Icon" />
                 </a>
+                <a href="https://www.youtube.com/channel/UCcm-ttunddHrEGWUdYkUd2w">
+                  <img src={navIcon4} alt="Icon" />
+                </a>
               </div>
-              <HashLink to="#connect">
-                <button className="vvd">
-                  <span>Get Registered</span>
-                </button>
-              </HashLink>
+              {/* <HashLink to="#connect"> */}
+              <button className="vvd" onClick={handleDownload}>
+                <span>Download Brochure</span>
+              </button>
+              {/* </HashLink> */}
             </span>
           </Navbar.Collapse>
         </Container>
