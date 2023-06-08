@@ -17,7 +17,6 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
- 
 });
 
 module.exports = mongoose.model("hackofest", userSchema);

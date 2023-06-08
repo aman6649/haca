@@ -14,25 +14,17 @@ export const Contact = () => {
     email: "",
     phone: "",
     clg: "",
-    TsacId: "",
   };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState("Send");
   const [status, setStatus] = useState({});
   const [fileUpload, setfileUpload] = useState(null);
+  const [fileUploadStatus, setfileUploadStatus] = useState(false);
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
       ...formDetails,
       [category]: value,
-    });
-  };
-  const UploadClick = (e) => {
-    e.preventDefault();
-    if (fileUpload == null) return;
-    const fileref = ref(storage, `file/${fileUpload.name + v4()}`);
-    uploadBytes(fileref, fileUpload).then(() => {
-      alert("Abstract Submitted Successfully");
     });
   };
 
@@ -44,22 +36,38 @@ export const Contact = () => {
       email: formDetails.email,
       phone: formDetails.phone,
       clg: formDetails.clg,
-      TsacId: formDetails.TsacId,
     };
-
-    axios
-      .post("/signup", dataO)
-      .then((res) => {
-        setFormDetails(formInitialDetails);
-        setStatus({ succes: true, message: "Registered successfully" });
-        setButtonText("Send");
-      })
-      .catch((err) => {
-        setStatus({
-          succes: false,
-          message: "Something went wrong, please try again later.",
-        });
+    if (fileUpload == null) {
+      setStatus({
+        succes: false,
+        message: "Please select abstract to upload !!!",
       });
+    } else {
+      const fileref = ref(storage, `file/${fileUpload.name + v4()}`);
+      uploadBytes(fileref, fileUpload)
+        .then(() => {
+          axios
+            .post("/signup", dataO)
+            .then((res) => {
+              setFormDetails(formInitialDetails);
+              setfileUpload(null);
+              setStatus({ succes: true, message: "Registered successfully" });
+              setButtonText("Send");
+            })
+            .catch((err) => {
+              setStatus({
+                succes: false,
+                message: "Something went wrong, please try again later.",
+              });
+            });
+        })
+        .catch((err) => {
+          setStatus({
+            succes: false,
+            message: "Something went wrong, please try again later.",
+          });
+        });
+    }
   };
 
   return (
@@ -138,20 +146,6 @@ export const Contact = () => {
                               required
                             />
                           </div>
-                          <button
-                            style={{
-                              top: "-12px",
-                              fontSize: "15px",
-                              paddingTop: "8px",
-                              paddingBottom: "8px",
-                              paddingLeft: "40px",
-                              paddingRight: "-10px",
-                              marginLeft: "10px",
-                            }}
-                            onClick={UploadClick}
-                          >
-                            <span>Upload</span>
-                          </button>
                         </div>
 
                         <button type="submit">
