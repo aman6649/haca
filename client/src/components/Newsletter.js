@@ -2,17 +2,6 @@ import { useState, useEffect } from "react";
 import { Col, Row, Alert } from "react-bootstrap";
 
 export const Newsletter = ({ status, message, onValidated }) => {
-  const handleDownload = () => {
-    const pdfUrl =
-      "https://drive.google.com/file/d/1oNThcRIS8uUp0C5tKrIgFEj-hATrmtYV/view";
-    window.open(pdfUrl, "_blank");
-  };
-  const handleDownload1 = () => {
-    const pdfUrl =
-      "https://drive.google.com/file/d/1jfsYJ-hEdA1DBiKLo8xG3IGfgnL05KgG/view";
-    window.open(pdfUrl, "_blank");
-  };
-
   const [isLaptopView, setIsLaptopView] = useState(window.innerWidth >= 992);
 
   useEffect(() => {
@@ -37,25 +26,20 @@ export const Newsletter = ({ status, message, onValidated }) => {
         <Row>
           <Col lg={12} md={6} xl={5} style={{ alignContent: "center" }}>
             <h5 style={{ whiteSpace: "nowrap" }}>Refer Attached PDF</h5>{" "}
+            <h5>Submit the abstract in TeamLeadName.docx/.pdf formate only</h5>{" "}
           </Col>
           <Col lg={12} md={6} xl={5}>
             <div className="new-email-bx">
-              <button
-                type="button"
-                onClick={handleDownload}
-                style={buttonStyle}
-              >
-                Abstract Format
-              </button>
+              <a href="../AbstractFormat.docx" download={"AbstractFormat"}>
+                <button type="button" style={buttonStyle}>
+                  Abstract Format
+                </button>
+              </a>
             </div>
             <div className="new-email-bx">
-              <button
-                type="button"
-                onClick={handleDownload1}
-                style={buttonStyle}
-              >
-                Rule Book
-              </button>
+              <a href="../RuleBook.pdf" download={"RuleBook"}>
+                <button style={buttonStyle}>Rule Book</button>
+              </a>
             </div>
           </Col>
           {/* <Col md={6} xl={7}>

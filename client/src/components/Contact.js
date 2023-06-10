@@ -139,6 +139,7 @@ export const Contact = () => {
                             </label>
                             <input
                               type="file"
+                              accept=".docx,.pdf"
                               id="fileUpload"
                               onChange={(event) => {
                                 setfileUpload(event.target.files[0]);
