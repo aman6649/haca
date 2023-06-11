@@ -11,11 +11,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-  const handleDownload = () => {
-    const pdfUrl =
-      "https://drive.google.com/file/d/1avP75STLCEgrenUVHuBv511RP20QXv2E/view?usp=sharing";
-    window.open(pdfUrl, "_blank");
-  };
+  // const handleDownload = () => {
+  //   const pdfUrl =
+  //     "https://drive.google.com/file/d/1avP75STLCEgrenUVHuBv511RP20QXv2E/view?usp=sharing";
+  //   window.open(pdfUrl, "_blank");
+  // };
 
   useEffect(() => {
     const onScroll = () => {
@@ -93,9 +93,14 @@ export const NavBar = () => {
                 </a>
               </div>
               {/* <HashLink to="#connect"> */}
-              <button className="vvd" onClick={handleDownload}>
-                <span>Download Brochure</span>
-              </button>
+              <a
+                href="../CORSIT HackFest'23.pdf"
+                download={"HACKFEST'23 Brochure"}
+              >
+                <button className="vvd">
+                  <span>Download Brochure</span>
+                </button>
+              </a>
               {/* </HashLink> */}
             </span>
           </Navbar.Collapse>
