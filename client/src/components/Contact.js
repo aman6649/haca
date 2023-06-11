@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { storage } from "./firebase";
-import { ref, uploadBytes } from "firebase/storage";
 import contactImg from "../assets/img/contact-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import axios from "axios";
 import { v4 } from "uuid";
+import { storage } from "./firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -15,6 +15,7 @@ export const Contact = () => {
     phone: "",
     clg: "",
   };
+
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState("Send");
   const [status, setStatus] = useState({});
@@ -36,33 +37,89 @@ export const Contact = () => {
         succes: false,
         message: "Please select abstract to upload !!!",
       });
-    } else {
-      const fileref = ref(storage, `file/${fileUpload.name + v4()}`);
-      uploadBytes(fileref, fileUpload)
+    } //else {
+    // const fileRef = storageRef.child(`path/to/${fileUpload}`);
+    // fileRef
+    //   .put(fileUpload)
+    //   .then(() => {
+    //     fileref
+    //       .getDownloadURL()
+    //       .then((url) => {
+    //         const dataO = {
+    //           name: formDetails.name,
+    //           email: formDetails.email,
+    //           phone: formDetails.phone,
+    //           clg: formDetails.clg,
+    //           abstractLink: url,
+    //         };
+    //         axios
+    //           .post("/signup", dataO)
+    //           .then((res) => {
+    //             setFormDetails(formInitialDetails);
+    //             setfileUpload(null);
+    //             setStatus({
+    //               succes: true,
+    //               message: "Registered successfully",
+    //             });
+    //             setButtonText("Send");
+    //           })
+    //           .catch((err) => {
+    //             setStatus({
+    //               succes: false,
+    //               message: "Something went wrong, please try again later.",
+    //             });
+    //           });
+    //       })
+    //       .catch((err) => {
+    //         setStatus({
+    //           succes: false,
+    //           message: "Something went wrong, please try again later.",
+    //         });
+    //       });
+    //   })
+    //   .catch((err) => {
+    //     setStatus({
+    //       succes: false,
+    //       message: "Something went wrong, please try again later.",
+    //     });
+    //   });
+    else {
+      const storageRef = ref(storage, `file/${fileUpload.name + v4()}`);
+      uploadBytes(storageRef, fileUpload)
         .then(() => {
-          fileref.getDownloadURL().then((url) => {
-            const dataO = {
-              name: formDetails.name,
-              email: formDetails.email,
-              phone: formDetails.phone,
-              clg: formDetails.clg,
-              abstractLink: url,
-            };
-            axios
-              .post("/signup", dataO)
-              .then((res) => {
-                setFormDetails(formInitialDetails);
-                setfileUpload(null);
-                setStatus({ succes: true, message: "Registered successfully" });
-                setButtonText("Send");
-              })
-              .catch((err) => {
-                setStatus({
-                  succes: false,
-                  message: "Something went wrong, please try again later.",
+          getDownloadURL(storageRef)
+            .then((url) => {
+              const dataO = {
+                name: formDetails.name,
+                email: formDetails.email,
+                phone: formDetails.phone,
+                clg: formDetails.clg,
+                abstractLink: url,
+              };
+              axios
+                .post("/signup", dataO)
+                .then((res) => {
+                  setFormDetails(formInitialDetails);
+                  setfileUpload(null);
+                  setStatus({
+                    succes: true,
+                    message: "Registered successfully",
+                  });
+                  setButtonText("Send");
+                })
+                .catch((err) => {
+                  setStatus({
+                    succes: false,
+                    message: "Something went wrong, please try again later.",
+                  });
                 });
+            })
+            .catch((err) => {
+              setStatus({
+                succes: false,
+                message: "Something went wrong, please try again later.",
               });
-          });
+            });
         })
         .catch((err) => {
           setStatus({

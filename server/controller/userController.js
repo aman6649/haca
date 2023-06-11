@@ -1,14 +1,14 @@
 const hackofest = require("../model/userModel");
 
 const register = async (req, res) => {
-  const { name, phone, email, clg } = req.body;
+  const { name, phone, email, clg, abstractLink } = req.body;
   try {
     const team = new hackofest({
       email,
       name,
       phone,
       clg,
-
+      abstractLink,
     });
     const newTeam = await team.save();
     if (newTeam)
