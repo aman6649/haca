@@ -31,12 +31,6 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    const dataO = {
-      name: formDetails.name,
-      email: formDetails.email,
-      phone: formDetails.phone,
-      clg: formDetails.clg,
-    };
     if (fileUpload == null) {
       setStatus({
         succes: false,
@@ -46,20 +40,29 @@ export const Contact = () => {
       const fileref = ref(storage, `file/${fileUpload.name + v4()}`);
       uploadBytes(fileref, fileUpload)
         .then(() => {
-          axios
-            .post("/signup", dataO)
-            .then((res) => {
-              setFormDetails(formInitialDetails);
-              setfileUpload(null);
-              setStatus({ succes: true, message: "Registered successfully" });
-              setButtonText("Send");
-            })
-            .catch((err) => {
-              setStatus({
-                succes: false,
-                message: "Something went wrong, please try again later.",
+          fileref.getDownloadURL().then((url) => {
+            const dataO = {
+              name: formDetails.name,
+              email: formDetails.email,
+              phone: formDetails.phone,
+              clg: formDetails.clg,
+              abstractLink: url,
+            };
+            axios
+              .post("/signup", dataO)
+              .then((res) => {
+                setFormDetails(formInitialDetails);
+                setfileUpload(null);
+                setStatus({ succes: true, message: "Registered successfully" });
+                setButtonText("Send");
+              })
+              .catch((err) => {
+                setStatus({
+                  succes: false,
+                  message: "Something went wrong, please try again later.",
+                });
               });
-            });
+          });
         })
         .catch((err) => {
           setStatus({
