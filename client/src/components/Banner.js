@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../assets/img/hdr.jpg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -96,9 +96,9 @@ export const Banner = () => {
                       13<sup>th</sup> June 2023
                     </b>
                   </p>
-                  <button onClick={() => window.location.replace("/#connect")}>
+                  {/* <button onClick={() => window.location.replace("/#connect")}>
                     Register Here! <ArrowRightCircle size={25} />
-                  </button>
+                  </button> */}
                   {/* </a> */}
                 </div>
               )}
@@ -112,7 +112,11 @@ export const Banner = () => {
                     isVisible ? "animate__animated animate__zoomIn" : ""
                   }
                 >
-                  <img src={headerImg} alt="Header Img" />
+                  <img
+                    style={{ borderRadius: "9px" }}
+                    src={headerImg}
+                    alt="Header Img"
+                  />
                 </div>
               )}
             </TrackVisibility>
